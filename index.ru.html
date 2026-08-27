@@ -1,0 +1,260 @@
+<!doctype html>
+<!-- ==========================================================================
+     КАК РЕДАКТИРОВАТЬ (русская версия)
+     ==========================================================================
+     Весь контент, который нужно заполнить, помечен комментариями «TODO:».
+     Ищите «TODO:» в редакторе, чтобы найти все плейсхолдеры.
+
+     Плейсхолдеры:
+       1. Девиз в Hero        → ищите TODO(1)
+       2. Об альянсе          → ищите TODO(2)
+       3. Вступление Регионов → ищите TODO(3)
+       4. Описания карточек   → ищите TODO(4)
+       5. Новая карточка      → ищите TODO(5)
+
+     Структура: Hero / баннер ключевых слов / Об альянсе / Новости (плейсхолдеры) /
+     Регионы (CN = Архив Ленина, работает; остальные — плейсхолдеры). На фоне
+     Hero — ярко-красная бегущая строка с цитатами Ленина, движущимися влево
+     с постоянной скоростью. В шапке — кнопки «Вступить» и «Архив Ленина»
+     (вёрстка вдохновлена comparty.by).
+     Языковые страницы: index.html (中文) / index.en.html (EN) / index.ru.html (RU).
+     Чтобы добавить новый язык: скопируйте этот файл, переведите и переименуйте
+     (см. README.md).
+     ========================================================================== -->
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Глобальный пролетарский альянс · Global Proletarian Alliance</title>
+<meta name="description" content="Глобальный пролетарский альянс (Global Proletarian Alliance) — главный портал · Китайский регион · Архив Ленина">
+<script>
+/* Против мигания: применяем тему до отрисовки */
+(function () {
+  try {
+    var t = localStorage.getItem("gpa-theme");
+    if (t === "dark" || (!t && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  } catch (e) {}
+})();
+</script>
+<link rel="stylesheet" href="assets/gpa.css">
+</head>
+<body>
+<a class="skip-link" href="#main">К основному содержимому</a>
+
+<header class="site-header">
+  <div class="site-header__inner container">
+    <a class="brand" href="index.ru.html">
+      <span class="brand__mark"><span>G</span></span>
+      <span class="brand__text">Глобальный пролетарский альянс</span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a class="nav__link" href="#about">Об альянсе</a>
+      <a class="nav__link" href="#regions">Регионы</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn-header btn-header--primary" href="#regions">Вступить</a>
+      <a class="btn-header btn-header--ghost" href="https://vassilykaslakov.github.io/lenin-site/" target="_blank" rel="noopener">Архив Ленина →</a>
+      <div class="lang-switch" role="group" aria-label="Выбор языка">
+        <a class="lang-switch__link" href="index.html" lang="zh-CN">中文</a>
+        <a class="lang-switch__link" href="index.en.html" lang="en">EN</a>
+        <a class="lang-switch__link is-active" href="index.ru.html" aria-current="page">RU</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Переключить светлую/тёмную тему" title="Переключить светлую/тёмную тему">☾</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero">
+    <div class="hero__ticker" aria-hidden="true">
+      <div class="hero__ticker-row">
+        <div class="hero__ticker-track">
+          <span class="ticker-item">Пролетарии всех стран и угнетённые народы, соединяйтесь!</span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item">Учиться, учиться и учиться!</span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item">Вся власть Советам!</span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item">Без революционной теории не может быть и революционного движения.</span><span class="ticker-dot" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="hero__ticker-row">
+        <div class="hero__ticker-track">
+          <span class="ticker-item">Империализм — высшая стадия капитализма.</span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item">Забыть прошлое — значит предать.</span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item">Социализм есть уничтожение классов.</span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item">Политика есть концентрированное выражение экономики.</span><span class="ticker-dot" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="hero__ticker-row">
+        <div class="hero__ticker-track">
+          <span class="ticker-item">Истина всегда конкретна.</span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item">Живое творчество масс — вот основной фактор новой общественной жизни.</span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item">Мир, земля, хлеб!</span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item">Меньше слов, больше дела!</span><span class="ticker-dot" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__inner container">
+      <p class="hero__eyebrow">Global Proletarian Alliance</p>
+      <h1 class="hero__title">Глобальный пролетарский альянс</h1>
+      <!-- TODO(1): Замените девиз альянса (одно предложение о его миссии). -->
+      <p class="hero__subtitle">Девиз альянса — будет заполнено.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="https://vassilykaslakov.github.io/lenin-site/" target="_blank" rel="noopener">Войти в Архив Ленина →</a>
+        <a class="btn btn--ghost" href="#about">Узнать больше</a>
+      </div>
+    </div>
+
+    <!-- TODO: Уточните подпись под фактическое содержимое изображения. -->
+    <div class="hero__banner container">
+      <figure class="hero__banner-figure">
+        <img class="hero__banner-img" src="assets/hero-banner.jpg" alt="Знамя Глобального пролетарского альянса">
+        <figcaption class="hero__banner-caption">Глобальный пролетарский альянс — международная марксистская площадка документов и идей: собрание классических трудов и революционной истории на разных языках, вооружающее пролетариев и угнетённые народы мира революционной теорией.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================== KEYWORDS ======================== -->
+  <section class="keywords" aria-label="Ключевые слова">
+    <div class="keywords__inner container">
+      <span class="keywords__item">Единство</span>
+      <span class="keywords__sep" aria-hidden="true"></span>
+      <span class="keywords__item">Освобождение</span>
+      <span class="keywords__sep" aria-hidden="true"></span>
+      <span class="keywords__item">Солидарность</span>
+    </div>
+  </section>
+
+  <!-- ======================== ABOUT ======================== -->
+  <section class="section section--alt" id="about">
+    <div class="section__inner container">
+      <header class="section__header">
+        <p class="section__eyebrow">About</p>
+        <h2 class="section__title">Об альянсе</h2>
+        <!-- TODO(2a): Замените вступление об альянсе (одно-два предложения). -->
+        <p class="section__lede">Введение об альянсе — будет заполнено.</p>
+      </header>
+      <div class="section__body about">
+        <!-- TODO(2b): Замените текст об альянсе.
+             Можете перестроить как угодно. По умолчанию двухколоночный каркас:
+             - Слева .about__body: несколько абзацев <p>
+             - Справа .key-list: несколько .key-list__item (красный маркер + текст)
+             Ненужную колонку можно удалить целиком. -->
+        <div class="about__body">
+          <p>Абзац первый — будет заполнено.</p>
+          <p>Абзац второй — будет заполнено. Расскажите о позиции, целях и форме организации альянса.</p>
+        </div>
+        <ul class="key-list">
+          <li class="key-list__item"><span class="key-list__marker" aria-hidden="true"></span><span>Ключевой пункт один — будет заполнено.</span></li>
+          <li class="key-list__item"><span class="key-list__marker" aria-hidden="true"></span><span>Ключевой пункт два — будет заполнено.</span></li>
+          <li class="key-list__item"><span class="key-list__marker" aria-hidden="true"></span><span>Ключевой пункт три — будет заполнено.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== NEWS ======================== -->
+  <!-- TODO: Заполните новости; замените миниатюру на реальное изображение и дайте ссылкам реальные адреса. -->
+  <section class="section" id="news">
+    <div class="section__inner container">
+      <header class="section__header">
+        <p class="section__eyebrow">Новости</p>
+        <h2 class="section__title">Новости</h2>
+        <p class="section__lede">Новости и объявления альянса — будет заполнено.</p>
+      </header>
+      <div class="news-grid">
+        <a class="news-card news-card--main" href="#">
+          <img class="news-card__thumb" src="assets/hero-banner.jpg" alt="">
+          <div class="news-card__body">
+            <time class="news-card__date">2026-08-27</time>
+            <h3 class="news-card__title">Заголовок — будет заполнено.</h3>
+          </div>
+        </a>
+        <ul class="news-feed">
+          <li class="news-feed__item">
+            <time class="news-feed__date">2026-08-25</time>
+            <a class="news-feed__link" href="#">Пункт новостной ленты — будет заполнено.</a>
+          </li>
+          <li class="news-feed__item">
+            <time class="news-feed__date">2026-08-22</time>
+            <a class="news-feed__link" href="#">Пункт новостной ленты — будет заполнено.</a>
+          </li>
+          <li class="news-feed__item">
+            <time class="news-feed__date">2026-08-20</time>
+            <a class="news-feed__link" href="#">Пункт новостной ленты — будет заполнено.</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== REGIONS ======================== -->
+  <section class="section" id="regions">
+    <div class="section__inner container">
+      <header class="section__header">
+        <p class="section__eyebrow">Regions</p>
+        <h2 class="section__title">Языковые регионы</h2>
+        <!-- TODO(3): Замените вступление к Регионам. -->
+        <p class="section__lede">Входы в архивы языковых регионов — будет заполнено.</p>
+      </header>
+      <div class="region-grid">
+
+        <!-- CN регион: работает, ведёт в Архив Ленина -->
+        <article class="region-card region-card--active">
+          <p class="region-card__code">CN</p>
+          <h3 class="region-card__name">Регион Китая · Архив Ленина</h3>
+          <!-- TODO(4a): Замените описание карточки CN. -->
+          <p class="region-card__desc">Китайскоязычный раздел Архива Ленина с полнотекстовым поиском по Собранию сочинений — будет заполнено.</p>
+          <span class="badge">Онлайн</span>
+          <a class="region-card__link" href="https://vassilykaslakov.github.io/lenin-site/" target="_blank" rel="noopener">Войти →</a>
+        </article>
+
+        <!-- TODO(5): Новая карточка региона — скопируйте любую карточку «soon» ниже,
+             измените code/name/desc. Когда раздел заработает: замените
+             region-card--soon на region-card--active и добавьте ссылку. -->
+        <article class="region-card region-card--soon">
+          <p class="region-card__code">EN</p>
+          <h3 class="region-card__name">English Section</h3>
+          <!-- TODO(4b): Замените описание карточки EN. -->
+          <p class="region-card__desc">Англоязычный раздел — будет заполнено.</p>
+          <span class="badge badge--soon">Скоро</span>
+        </article>
+
+        <article class="region-card region-card--soon">
+          <p class="region-card__code">RU</p>
+          <h3 class="region-card__name">Русский раздел</h3>
+          <!-- TODO(4c): Замените описание карточки RU. -->
+          <p class="region-card__desc">Русскоязычный раздел — будет заполнено.</p>
+          <span class="badge badge--soon">Скоро</span>
+        </article>
+
+        <article class="region-card region-card--soon">
+          <p class="region-card__code">ES</p>
+          <h3 class="region-card__name">Sección en español</h3>
+          <!-- TODO(4d): Замените описание карточки ES. -->
+          <p class="region-card__desc">Испаноязычный раздел — будет заполнено.</p>
+          <span class="badge badge--soon">Скоро</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner container">
+    <nav class="footer-nav" aria-label="Навигация в подвале">
+      <a href="https://vassilykaslakov.github.io/lenin-site/" target="_blank" rel="noopener">Архив Ленина (Китайский регион)</a>
+      <a href="index.html" lang="zh-CN">中文</a>
+      <a href="index.en.html" lang="en">English</a>
+    </nav>
+    <p class="footer-copy">© <span data-year>2026</span> Global Proletarian Alliance</p>
+  </div>
+</footer>
+
+<script src="assets/gpa.js"></script>
+</body>
+</html>

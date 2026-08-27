@@ -1,0 +1,8 @@
+# 系统/编辑器杂项
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# 本地临时文件
+*.tmp
+*.log

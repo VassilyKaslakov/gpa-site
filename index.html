@@ -1,0 +1,256 @@
+<!doctype html>
+<!-- ==========================================================================
+     编辑指南 / HOW TO EDIT（中文版）
+     ==========================================================================
+     所有需要你填写的内容都标有「TODO:」注释。在编辑器中搜索 "TODO:" 即可
+     逐一定位全部占位点。具体每项改哪里、怎么改，见 README.md 里的对照表。
+
+     主要占位点：
+       1. Hero 副标语        → 搜 TODO(1)
+       2. 关于联盟（About）  → 搜 TODO(2)
+       3. 语言区导语        → 搜 TODO(3)
+       4. 各语言区卡片描述   → 搜 TODO(4)
+       5. 新增语言区卡片     → 搜 TODO(5)
+
+     页面结构：Hero / 关键词大字横幅 / 关于联盟 / 要闻（占位）/ 语言区（CN=列宁文库 已上线 + 其余占位）。
+     Hero 背景有鲜红列宁名言滚动条（多行，一直向左匀速移动；中文行下带俄文与作者）。
+     页头有「加入联盟」CTA 与「列宁文库」跳转按钮（仿 comparty.by 排版）。
+     语言版本页：index.html（中文）/ index.en.html（EN）/ index.ru.html（RU）。
+     新增语言版本页：复制 index.en.html 改名翻译即可（详见 README）。
+     ========================================================================== -->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>全球无产阶级联盟 · Global Proletarian Alliance</title>
+<meta name="description" content="全球无产阶级联盟（Global Proletarian Alliance）主站 —— 中文区 · 列宁文库入口">
+<script>
+/* 防闪烁：渲染前读取主题偏好 */
+(function () {
+  try {
+    var t = localStorage.getItem("gpa-theme");
+    if (t === "dark" || (!t && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  } catch (e) {}
+})();
+</script>
+<link rel="stylesheet" href="assets/gpa.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header">
+  <div class="site-header__inner container">
+    <a class="brand" href="index.html">
+      <span class="brand__mark"><span>G</span></span>
+      <span class="brand__text">全球无产阶级联盟</span>
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a class="nav__link" href="#about">关于联盟</a>
+      <a class="nav__link" href="#regions">语言区</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn-header btn-header--primary" href="#regions">加入联盟</a>
+      <a class="btn-header btn-header--ghost" href="https://vassilykaslakov.github.io/lenin-site/" target="_blank" rel="noopener">列宁文库 →</a>
+      <div class="lang-switch" role="group" aria-label="语言选择">
+        <a class="lang-switch__link is-active" href="index.html" aria-current="page">中文</a>
+        <a class="lang-switch__link" href="index.en.html" lang="en">EN</a>
+        <a class="lang-switch__link" href="index.ru.html" lang="ru">RU</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="切换浅深色主题" title="切换浅深色主题">☾</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero">
+    <div class="hero__ticker" aria-hidden="true">
+      <div class="hero__ticker-row">
+        <div class="hero__ticker-track">
+          <span class="ticker-item"><span class="ticker-item__zh">全世界无产者和被压迫民族，联合起来！</span><span class="ticker-item__sub">Пролетарии всех стран и угнетённые народы, соединяйтесь! — В. И. Ленин</span></span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item"><span class="ticker-item__zh">学习，学习，再学习！</span><span class="ticker-item__sub">Учиться, учиться и учиться! — В. И. Ленин</span></span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item"><span class="ticker-item__zh">一切权力归苏维埃！</span><span class="ticker-item__sub">Вся власть Советам! — В. И. Ленин</span></span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item"><span class="ticker-item__zh">没有革命的理论，就不会有革命的运动。</span><span class="ticker-item__sub">Без революционной теории не может быть и революционного движения. — В. И. Ленин</span></span><span class="ticker-dot" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="hero__ticker-row">
+        <div class="hero__ticker-track">
+          <span class="ticker-item"><span class="ticker-item__zh">帝国主义是资本主义的最高阶段。</span><span class="ticker-item__sub">Империализм — высшая стадия капитализма. — В. И. Ленин</span></span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item"><span class="ticker-item__zh">忘记过去就意味着背叛！</span><span class="ticker-item__sub">Забыть прошлое — значит предать. — В. И. Ленин</span></span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item"><span class="ticker-item__zh">社会主义就是消灭阶级。</span><span class="ticker-item__sub">Социализм есть уничтожение классов. — В. И. Ленин</span></span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item"><span class="ticker-item__zh">政治是经济的集中表现。</span><span class="ticker-item__sub">Политика есть концентрированное выражение экономики. — В. И. Ленин</span></span><span class="ticker-dot" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="hero__ticker-row">
+        <div class="hero__ticker-track">
+          <span class="ticker-item"><span class="ticker-item__zh">真理总是具体的。</span><span class="ticker-item__sub">Истина всегда конкретна. — В. И. Ленин</span></span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item"><span class="ticker-item__zh">生气勃勃的创造性的社会主义是由人民群众自己创立的。</span><span class="ticker-item__sub">Живое творчество масс — вот основной фактор новой общественной жизни. — В. И. Ленин</span></span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item"><span class="ticker-item__zh">和平、土地、面包！</span><span class="ticker-item__sub">Мир, земля, хлеб! — В. И. Ленин</span></span><span class="ticker-dot" aria-hidden="true"></span>
+          <span class="ticker-item"><span class="ticker-item__zh">少说空话，多做工作！</span><span class="ticker-item__sub">Меньше слов, больше дела! — В. И. Ленин</span></span><span class="ticker-dot" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__inner container">
+      <p class="hero__eyebrow">Global Proletarian Alliance</p>
+      <h1 class="hero__title">全球无产阶级联盟</h1>
+      <!-- TODO(1): 在此替换为联盟副标语（一句话概括联盟的使命） -->
+      <p class="hero__subtitle">联盟使命副标语 —— 待填写。</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="https://vassilykaslakov.github.io/lenin-site/" target="_blank" rel="noopener">进入列宁文库 →</a>
+        <a class="btn btn--ghost" href="#about">了解联盟</a>
+      </div>
+    </div>
+
+    <!-- TODO: 按图片实际内容改写介绍（当前为联盟导语草稿） -->
+    <div class="hero__banner container">
+      <figure class="hero__banner-figure">
+        <img class="hero__banner-img" src="assets/hero-banner.jpg" alt="全球无产阶级联盟红旗">
+        <figcaption class="hero__banner-caption">全球无产阶级联盟（Global Proletarian Alliance）——国际性的马克思主义文献与思想阵地，汇集各语种经典著作与革命历史文献，为全世界的无产者和被压迫民族提供革命的理论武器。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ======================== KEYWORDS ======================== -->
+  <section class="keywords" aria-label="关键词">
+    <div class="keywords__inner container">
+      <span class="keywords__item">联合</span>
+      <span class="keywords__sep" aria-hidden="true"></span>
+      <span class="keywords__item">解放</span>
+      <span class="keywords__sep" aria-hidden="true"></span>
+      <span class="keywords__item">团结</span>
+    </div>
+  </section>
+
+  <!-- ======================== ABOUT ======================== -->
+  <section class="section section--alt" id="about">
+    <div class="section__inner container">
+      <header class="section__header">
+        <p class="section__eyebrow">About</p>
+        <h2 class="section__title">关于联盟</h2>
+        <!-- TODO(2a): 在此替换为「关于联盟」的导语（一两句总述） -->
+        <p class="section__lede">关于联盟的导语 —— 待填写。</p>
+      </header>
+      <div class="section__body about">
+        <!-- TODO(2b): 在此替换为联盟介绍正文。
+             可自由改写结构；默认给了一个「左文右要点」的双栏骨架：
+             - 左侧 .about__body：若干 <p> 段落
+             - 右侧 .key-list：若干 .key-list__item（每条含红方块标记 + 要点文字）
+             不需要某栏可直接删掉对应 <div>。 -->
+        <div class="about__body">
+          <p>联盟介绍正文第一段 —— 待填写。</p>
+          <p>联盟介绍正文第二段 —— 待填写。可介绍联盟的立场、目标、构成方式等。</p>
+        </div>
+        <ul class="key-list">
+          <li class="key-list__item"><span class="key-list__marker" aria-hidden="true"></span><span>要点一 —— 待填写。</span></li>
+          <li class="key-list__item"><span class="key-list__marker" aria-hidden="true"></span><span>要点二 —— 待填写。</span></li>
+          <li class="key-list__item"><span class="key-list__marker" aria-hidden="true"></span><span>要点三 —— 待填写。</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== NEWS ======================== -->
+  <!-- TODO: 填要闻内容；图片换成真实新闻图，链接换成 # 对应页 -->
+  <section class="section" id="news">
+    <div class="section__inner container">
+      <header class="section__header">
+        <p class="section__eyebrow">News</p>
+        <h2 class="section__title">要闻</h2>
+        <p class="section__lede">联盟动态与公告 —— 待填写。</p>
+      </header>
+      <div class="news-grid">
+        <a class="news-card news-card--main" href="#">
+          <img class="news-card__thumb" src="assets/hero-banner.jpg" alt="">
+          <div class="news-card__body">
+            <time class="news-card__date">2026-08-27</time>
+            <h3 class="news-card__title">头条标题 —— 待填写。</h3>
+          </div>
+        </a>
+        <ul class="news-feed">
+          <li class="news-feed__item">
+            <time class="news-feed__date">2026-08-25</time>
+            <a class="news-feed__link" href="#">动态条目 —— 待填写。</a>
+          </li>
+          <li class="news-feed__item">
+            <time class="news-feed__date">2026-08-22</time>
+            <a class="news-feed__link" href="#">动态条目 —— 待填写。</a>
+          </li>
+          <li class="news-feed__item">
+            <time class="news-feed__date">2026-08-20</time>
+            <a class="news-feed__link" href="#">动态条目 —— 待填写。</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== REGIONS ======================== -->
+  <section class="section" id="regions">
+    <div class="section__inner container">
+      <header class="section__header">
+        <p class="section__eyebrow">Regions</p>
+        <h2 class="section__title">语言区</h2>
+        <!-- TODO(3): 在此替换为「语言区」的导语 -->
+        <p class="section__lede">各语言区的文献与资料入口 —— 待填写。</p>
+      </header>
+      <div class="region-grid">
+
+        <!-- CN 区：已上线，链接到列宁文库 -->
+        <article class="region-card region-card--active">
+          <p class="region-card__code">CN</p>
+          <h3 class="region-card__name">中国区 · 列宁文库</h3>
+          <!-- TODO(4a): 在此替换为 CN 区卡片描述 -->
+          <p class="region-card__desc">中文马克思主义文库列宁专区，含《列宁全集》全文检索 —— 待填写。</p>
+          <span class="badge">已上线</span>
+          <a class="region-card__link" href="https://vassilykaslakov.github.io/lenin-site/" target="_blank" rel="noopener">进入 →</a>
+        </article>
+
+        <!-- TODO(5): 新增语言区卡片 —— 复制下方任意一张 "soon" 卡片，改 code/name/desc。
+             内容上线后：把 region-card--soon 改为 region-card--active、补上链接。 -->
+        <article class="region-card region-card--soon">
+          <p class="region-card__code">EN</p>
+          <h3 class="region-card__name">English Section</h3>
+          <!-- TODO(4b): 在此替换为 EN 区卡片描述 -->
+          <p class="region-card__desc">English-language section —— 待填写。</p>
+          <span class="badge badge--soon">Coming Soon</span>
+        </article>
+
+        <article class="region-card region-card--soon">
+          <p class="region-card__code">RU</p>
+          <h3 class="region-card__name">Русский раздел</h3>
+          <!-- TODO(4c): 在此替换为 RU 区卡片描述 -->
+          <p class="region-card__desc">Русскоязычный раздел —— 待填写。</p>
+          <span class="badge badge--soon">Coming Soon</span>
+        </article>
+
+        <article class="region-card region-card--soon">
+          <p class="region-card__code">ES</p>
+          <h3 class="region-card__name">Sección en español</h3>
+          <!-- TODO(4d): 在此替换为 ES 区卡片描述 -->
+          <p class="region-card__desc">Sección en español —— 待填写。</p>
+          <span class="badge badge--soon">Coming Soon</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner container">
+    <nav class="footer-nav" aria-label="页脚导航">
+      <a href="https://vassilykaslakov.github.io/lenin-site/" target="_blank" rel="noopener">列宁文库（中国区）</a>
+      <a href="index.en.html" lang="en">English</a>
+      <a href="index.ru.html" lang="ru">Русский</a>
+    </nav>
+    <p class="footer-copy">© <span data-year>2026</span> Global Proletarian Alliance</p>
+  </div>
+</footer>
+
+<script src="assets/gpa.js"></script>
+</body>
+</html>
