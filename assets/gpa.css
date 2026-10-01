@@ -188,7 +188,7 @@ h1, h2, h3, h4 {
 /* 红底上的对比色（白字为主，hover 用金黄） */
 .site-header .brand__text { color: #ffffff; }
 
-.site-header .brand__mark { background: #ffffff; }
+.site-header .brand__mark { background: #ffd84d; }
 .site-header .brand__mark span { color: var(--brand); }
 
 .site-header .nav__link { color: #ffffff; }
@@ -950,3 +950,4 @@ h1, h2, h3, h4 {
     animation-duration: .01ms !important;
   }
 }
+/* 老子要累死了 */
